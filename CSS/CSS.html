@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+    <h1 id="Título">
+        Olá, mundo!!
+    </h1>
+    <p>
+        <abbr title="Cascading Style Sheet">CSS</abbr> não é uma linguagem, e sim uma folha de estilo.
+        <br>Código para criar estilos no HTML.
+    </p>
+    <button>Embarcar</button>
+    <style>
+        h1 {
+            color: slateblue
+        }
+    </style>
+    <p>A ordem de peso do CSS é lida como:<br>
+    inline > tag style > tag link</p>
+
+    <!--
+        Especificidade:
+        0. Universe Selector, Combinators, negative pseudo-class (:not())
+        1. Element type selector e pseudo-elements (::before, ::after)
+        10. Classes e attribute selectors ([type="radio"])
+        100. ID Selector
+        1000. Inline
+
+        Pode ser somado, mesma soma lê-se de cima para baixo!
+
+        !important : sobressai todas as regras!
+    -->
+
+    At Rules, regras para o CSS "@":<br>
+    @import:      /* incluir um CSS externo */<br>
+    @media:       /* regras condicionais para dispositivos */<br>
+    @font-face:   /* fontes externas */<br>
+    @keyframes:   /* Animation */<br>
+        <br><h3>Shorthand:</h3>
+    <p>
+        Background:<br>
+        <b>De:</b><br>
+        Background-color: #000;<br>
+        Background-image: url(images/bg.gif);<br>
+        Background-repeat: no-repeat;<br>
+        Background-position: left top;<br>
+        <b>Para:</b><br>
+        Background: #000 url(images/bg.gif) no-repeat left top;
+    </p>
+    <p>
+        Fonte:<br>
+        <b>De:</b><br>
+        font-style: italic;<br>
+        font-weight: bold;<br>
+        font-size: .8em;<br>
+        line-height: 1.2;<br>
+        font-family: Arial, sans-serif;<br>
+        <b>Para:</b><br>
+        font: italic bold .8em/1.2 arial, sans-serif;
+        <!--A ordem não importa, valores não especificados assumem o valor padrão e não serão consideradas 
+        propriedades anteriores (incluso não especificada neste shorthand)-->
+    </p>
+    <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">
+        Propriedades que aceitam o shorthand:</a>
+    </p>
+    <p>
+        Certas funções CSS precisam de prefixos para funcionar em certos navegadores.
+        <br>aqui temos alguns sites para identificar quais sites requerem este prefixo:<br>
+        <a href="http://ireade.github.io/which-vendor-prefix/">Ireade</a><br>
+        <a href="http://caniuse.com">CanIUse</a>
+    </p>
+</body>
+</html>

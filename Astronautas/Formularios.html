@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" method="" id="data-perfil"><!--method = 'GET'[padrão] or 'POST'-->
+        <fieldset form="contact" name="name">
+            <legend>Contato</legend>
+            <label>Name</label>
+            <input type="text">
+        </fieldset>
+        <fieldset form="contact" name="email">
+            <label>Email</label>
+            <input type="text">
+        </fieldset>
+    </form>
+    <button type="reset" form="data-perfil">Apagar</button><br><br><br>
+
+    <h3>Input</h3>
+    <p>
+        action: endereço para o qual será enviado (mesma página se vazio)<br>
+        autofocus: ao digitar enter o botão será pressionado<br>
+        autofocus: quando entrar no endereço será o foco da página<br>
+        button- foco pelo botão enter<br>
+        input- foco do cursor<br>
+        disabled: desabilitado<br>
+        readonly: apenas leitura<br>
+        required: obrigatório<br>
+        placeholder: nome no input<br>
+        checked: checkbox já marcado<br>
+    </p> <!--input-->
+    
+    <form action=""><br>
+    <label for="name">Nome Completo</label>
+    <input id="name" type="text" value="Nome"><br><br>
+        <input type="text" value="">
+        <button type="reset">Resetar</button>
+    </form><br><br>
+
+    <form action=""><input type="color" list="colors" placeholder="Esclha uma cor">
+    <button type="reset">Resetar</button>
+    <input type="text" list="fruitsdata" placeholder="Escolha uma fruta">
+
+    <datalist id="fruitsdata">
+        <option>maça</option>
+        <option>banana</option>
+        <option>laranja</option>
+    </datalist>
+
+    <datalist id="colors">
+        <option>#ff0000</option>
+        <option>#00ff00</option>
+        <option>#ffff00</option>
+        <option>#53cab2</option>
+    </datalist>
+    </form><br>
+
+    <label for="pets">Escolha seu pet:</label>
+    <select name="pets">
+        <optgroup label="4-legged pets">
+            <option value="dog">Cão</option>
+            <option value="cat">Gato</option>
+            <option value="hamster">Hamster</option>
+        </optgroup>
+        <optgroup label="Flying pets">
+            <option value="parrot">Papagaio</option>
+            <option value="macaw">Arara</option>
+            <option value="canary">Canário</option>
+        </optgroup>
+    </select>
+
+    <h3>Types of input:</h3>
+    <ul>
+        <li>text;</li> <!--escrita comum-->
+        <li>date;</li> <!--sistema de data-->
+        <li>number;</li> <!--apenas números-->
+        <li>email;</li> <!--apenas texto para email '@name.com'-->
+        <li>file;</li> <!--importa um arquivo do dispositivo-->
+        <li>password;</li> <!--caracteres escondidos-->
+        <li>URL;</li> <!--apenas link-->
+        <li>checkbox;</li> <!--caixa de marcação, 'on' ou 'off'-->
+        <!--para múltiplo ambos checkbox devem ter o mesmo 'name'-->
+        <li>hidden;</li> <!--invisível ao usuário, usado para enviar formulários-->
+        <li>radio;</li> <!--selecionar apenas uma opção-->
+        <li>textarea;</li> <!--area para textos-->
+        <li>select;</li> <!--selecinar opções já cadastradas em <option>-->
+        <li>number;</li> <!--somente números-->
+        <li>range;</li> <!--área slide, cursor deslize-->
+        <!--extras:
+        date: yyyy-mm-dd;
+        datetime-local: dia, mês, ano, horas e minutos; 
+        month: mês;
+        time: hora e minuto;
+        week: semana, ano.
+        -->
+    </ul> <!--types of input-->
+
+    <h3>Complements:</h3>
+    <p>
+        minlenght="number" <!--a partir da quantidade de caracteres citada--><br>
+        maxlenght="number" <!--quantidade máxima de caracteres--><br>
+        size="number" <!--tamanho da área input--><br>
+        pattern="command" <!--comandos de validação--><br>
+        <!--commands accept:
+        [value-value]  //caracteres entre [0-9], [a-f], [A-F]
+        {value}        //quantidade de caracteres {max, min}
+        .              //qualquer caractere
+        +              //uma ou mais vezes
+        *              //multiplas vezes
+        \              //anular comando, apenas caractere-->
+        list="{id}" <!--vinculado a uma datalist para previsão--><br>
+        title="string" <!--mensagem para quando erro--><br>
+        inputmode="numeric" <!--abrir teclado numérico--><br>
+        autocomplete="on/off" <!--sugestão de new-password/current-password--><br>
+        multiple <!--receber um ou mais valores separados por vírgula--><br>
+        <!--para múltiplos files: 
+        <form action="" method="post" enctype="multipart/form-data"></form>
+        -->
+        spellcheck="true" <!--corretor ligado--><br>
+        accept="string" <!--aceitos, caso file: .doc, .pdf, .png, .jpeg,
+        audio/*, video/* {qualquer arquivo de audio ou video}--><br>
+        wrap="off/soft/hard" <!--quebra de linha quando ativo--><br>
+        size="number" <!--quantidade de valores que irão aparecer--><br>
+        aria-label="string" <!--acessibilidade, quando não há <label>--><br>
+        min="number" <!--mínimo--><br>
+        max="number" <!--máximo--><br>
+        step="number" <!--de quanto em quanto--><br>
+    </p> <!--complements-->
+
+    <h1>Exercício</h1>
+    <form>
+        <fieldset id="contact">
+            <legend>Contato:</legend>
+            <label for="name">Nome:</label><br>
+            <input id="name" name="name" type="text" min="3"><br><br>
+            <label for="email">Email:</label><br>
+            <input id="email" name="email" type="email"><br><br>
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="message" cols="20" rows="8">
+            </textarea><br><br>
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>

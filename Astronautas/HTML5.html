@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Título</h2>
+    <p style="color: #0000ff;">Parágrafo 1.</p>
+    <hr> <!--linha horizontal-->
+    <p style="color: #ffff00;">Parágrafo 2.</p>
+    <hr> <!--linha horizontal-->
+    <p style="color: #ff0000;">Parágrafo 2.</p>
+
+    <video src="endereçoDoVideo" controls
+        width="number"
+        height="number"
+        autoplay
+        loop
+        muted
+        poster="image"
+        preload=""> 
+        <!--
+            poster : imagem de fundo
+            preload : auto/metadata/none
+        -->
+        <source src="endereçoDoVideo" type="extensão">
+        <p>Seu browser não é compativel</p>
+    </video>
+
+    <audio controls>
+        <source src="endereçoDoAudio" type="extensão">
+        <p>Seu browser não suporta audio</p>
+    </audio>
+
+    <iframe src="link.com" frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        title="Título para acessibilidade">
+        <!--https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/iframe--> 
+    </iframe>
+
+    <a href="https://rocketseat.com.br">
+        <figure>
+            <img alt="Seu browser não reconheceu a imagem"
+            src="https://rocketseat.com.br/icons/icon-48x48.png" 
+            title="logo Rocketseat"
+            height="200">
+            <figcaption>Vinculado à imagem</figcaption>
+        </figure>
+    </a>
+
+    <svg width="300" height="200">
+        <rect width="100%" height="100%" fill="green"/>
+        <polyline points="20,100 150,15 280,100 150,185" fill="yellow"/>
+        <circle cx="150" cy="100" r="60" fill="blue"/>
+    <!--para importar svg: 
+        <img src="endereço">;
+        atributos obrigatórios no .svg: 
+        version="1.1" baseProfile="full" xmlns="https://www.w3.org/2000/svg"
+    -->
+    <!--https://developer.mozilla.org/en-US/docs/Web/SVG/Element-->
+    </svg>
+
+</body>
+</html>

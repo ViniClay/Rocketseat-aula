@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Visual.css">
+    <title>Visual</title>
+</head>
+<body>
+    <div class="unities">
+        <h1>Tipos de valores</h1>
+        <p>
+            <h3>Tipos de números</h3>
+            integer: inteiro<br>
+            number: decimal<br>
+            dimension: number + unidade (80deg; 12px)<br>
+            percentagem: porcentagem<br>
+        </p>
+        <p>
+            <h3>Unidades comuns</h3>
+            lenght: distância (px; em)<br>
+            angle: ângulo (deg; rad; turn)<br>
+            time: tempo (s; ms)<br>
+            resolution: resolução (dpi)<br>
+        </p>
+    </div>
+    <div class="tableAria">
+        <h3>Distâncias absolutas e relativas</h3>
+        <table id="absoluteDistanceTable">
+        <thead>
+            <tr>
+                <th colspan="3">Absoluta</th>
+            </tr>
+            <tr>
+                <th>Unidade</th>
+                <th>Nome</th>
+                <th>Equivalência</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>cm</td>
+                <td>Centímetros</td>
+                <td>1cm = 96px/2.54</td>
+            </tr>
+            <tr>
+                <td>in</td>
+                <td>Inches (Polegadas)</td>
+                <td>1in = 2.54cm = 96px</td>
+            </tr>
+            <tr>
+                <td>px</td>
+                <td>Pixels</td>
+                <td>1px = 1/96th of 1in</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr><td colspan="3">* o mais comum e mais utilizado é o **px**</td></tr>
+            <tr><td colspan="3">** não recomendado usar **cm**</td></tr>
+        </tfoot>
+        </table>
+        <table id="relativeDistanceTable">
+        <thead>
+            <tr>
+                <th colspan="2">Relativa</th>
+            </tr>
+            <tr>
+                <th>Unidade</th>
+                <th>Relativo a</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>em</td>
+                <td>tamanho da font pai</td>
+            </tr>
+            <tr>
+                <td rowspan="2">rem</td>
+                <td rowspan="2">tamanho da font do elemento raiz<br>(root/html)</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>%</td>
+                <td>porcentagem do pai</td>
+            </tr>
+            <tr>
+                <td>vw</td>
+                <td>1% da viewport width</td>
+            </tr>
+            <tr>
+                <td>vh</td>
+                <td>1% da viewport height</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="CSS">
+        <p>
+            Em CSS:<br><br>
+            Position: <br>right; left; bottom; top; center.<br>
+            rgb()<br>
+            hsl()<br>
+            url()<br>
+            calc()<br>
+            <br>
+            .box::after {<br>
+            &nbsp &nbsp content: "String";<br>
+            }<br><br>
+            .box::before {<br>
+            &nbsp &nbsp content: "String";<br>
+            }<br><br>
+            <!--texto antes ou depois-->
+
+            element:hover, .class, #id {<br>
+            }<br><br>
+            <!--vários elementos-->
+            <!--hover = mesmo que onmouseover-->
+
+            body div p {<br>
+            }<br><br>
+            <!--elementos em cascata-->
+
+            body > div > p {<br>
+            }<br><br>
+            <!--pegar os filhos diretos-->
+
+            div + div {<br>
+            }<br><br>
+            <!--pegar o irmão direto, 
+            no caso o segundo 'div'-->
+
+            h1 ~ p {<br>
+            }<br><br>
+            <!--pegar todos os irmãos 'p'-->
+
+            ul > li[class="class"]{} <br><br>
+        </p>
+        <p>
+            <h3>Pseudo</h3>
+            <p>
+                Pseudo-class:
+                <ul>
+                    <li>:first-child</li>
+                    <!--primeiro filho da caixa-->
+                    <li>:nth-of-type(even)</li>
+                    <!--numerogésimo do tipo; even:pares-->
+                    <li>:nth-child(odd)</li>
+                    <!--numerogésimo filho; odd:ímpares-->
+                    <li>:hover</li> <!--onmouseover-->
+                    <li>:focus</li> 
+                    <!--quando for o foco, ex: input-->
+                    <li>:disabled</li> <!--quando desabilitado-->
+                    <li>:required</li> <!--quando obrigatório-->
+                </ul>
+                Pseudo-element:
+                <ul>
+                    <li>::after;</li>
+                    <li>::before;</li>
+                    <li>::first-line;</li>
+                    <li>::selection.</li>
+                </ul>
+            </p>
+        </p>
+    </div>
+    <div class="box">
+        <ul>
+            <li>Tamanho - widht / height</li>
+            <li>Conteúdo - content</li>
+            <li>Bordas - border</li>
+            <li>Preenchimento Interno - padding</li>
+            <li>Espaços fora da caixa - margin</li>
+        </ul>
+        <h3>Display Block e Inline</h3>
+        <ul>
+            <b>Block</b>
+            <li>Ocupa toda a linha, jogando para baixo</li>
+            <li>widht e height serão respeitados</li>
+            <li>padding, margin e border são respeitados</li>
+            <b>Inline</b>
+            <li>Elemento um ao lado do outro</li>
+            <li>widht e height não funcionam</li>
+            <li>somente valores horizontais de padding, margin e border</li>
+        </ul>
+        <ul>
+        <b>margin: margin-top margin-right margin-bottom margin-left</b>
+            <li>1px 2px 4px 8px</li>
+            <li>1px 2px 4px</li><!--left U right-->
+            <li>1px 2px</li><!--top U bottom-->
+            <li>1px</li><!--todas as margens recebem o mesmo valor-->
+        <b>padding: padding-top padding-right padding-bottom padding-left</b>
+            <li>1px 2px 4px 8px</li>
+            <li>1px 2px 4px</li>
+            <li>1px 2px</li>
+            <li>1px</li>
+        </ul>
+        <ul>
+            <b>Style text</b>
+            <li>font-variant</li>
+            <li>font-strech</li><!--largura dos caracteres
+            expanded|condensed|normal|<porcentagem>-->
+            <li>letter-spacing</li><!--espaçamento entre letras-->
+            <li>word-spacing</li><!--espaçamento entre palavras-->
+            <li>line-height</li><!--espaço entre linhas-->
+            <li>text-transform</li><!--alterar o texto
+            capitalize(primeiras maiúsculas)|uppercase|lowercase|none-->
+            <li>text-decoration</li><!--underline|overline|line-through
+            wavy(serra)|dashed(tracejado)|dotted(pontilhado)|solid-->
+            <li>text-align</li><!--center|right|left|justify(ajustar)-->
+            <li>text-shadow</li><!--1px 1px 1px #fff
+            offset-x offset-y blur-radius color-->
+        </ul>
+        <ul>
+            <b>position</b>
+            <li>static</li><!--padrão da página-->
+            <li>relative</li><!--pode ser tratado como outro fluxo
+            pode ter próprios: top|right|bottom|left-->
+            <li>absolute</li><!--pode ser tratado como outra tela-->
+            <ul>
+                <li>z-index</li>
+                <!--alterar peso do bloco, maior sempre superior-->
+            </ul>
+            <li>fixed</li><!--fixo na página-->
+        </ul>
+        <ul>
+            <b>Background</b>
+            <li>-color</li>
+            <li>-image</li><!--url()-->
+            <li>-repeat</li>
+            <!--imagem: repeat|no-repeat|repeat-y|repeat-x-->
+            <li>-position</li><!--: eixo-x eixo-y
+            right|left|top|bottom|center-->
+            <li>-size</li><!--contain(encaixar)|cover(cobrir)-->
+            <li>-origin</li><!--padding|border|margin|content-->
+            <li>-clip</li><!--origem do background-->
+            <li>-attachment</li><!--scroll(rolar)|fixed-->
+            <br>
+            <li>linear-gradient: (degree, color, color, color)</li>
+            <li>radial-gradient: (color, color, color)</li>
+        </ul>
+        <ul>
+            <b>Flex</b>
+            <li>display: Flex;</li>
+            <!--transformar em flex-container e flex itens-->
+            <li>flex-direction: 'direction';</li>
+            <!--row|row-reverse|column|column-reverse-->
+            <li>Axis(Eixo)</li>
+            <!--eixo principal horizontal[padrão] e eixos cruzados-->
+            <li>justify-content: flex-start|flex-end|center
+                space-between|space-around|space-evenly;</li>
+            <li>flex: 'number';</li>
+            <!--ajuste de height e width para preenchimento total da flex-box-->
+            <li>flex-wrap: nowrap[padrão]|wrap|wrap-reverse;</li>
+            <!--novo eixo para ajustar todos os tamanhos-->
+            <li>align-items: flex-start|center|flex-end;</li>
+            <li>gap: 2px;</li><!--space-between-->
+            <li>flex-basis: 10px;</li>
+            <!--usado no flex-item; auto[padrão]; tamanho do item no main-->
+            <li>flex-grow: 'number';</li><!--proporção de aumento-->
+            <li>flex-shrink: 'number';</li><!--proporção de diminuição-->
+        </ul>
+    </div>
+</body>
+</html>

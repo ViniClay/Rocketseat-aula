@@ -1,0 +1,20 @@
+body {
+   width: calc(100vh - 20px);
+   height: 100%;
+   font-family: 'Times New Roman', Times, serif;
+} /*fontes fallback, caso não reconhecida*/
+
+.tableAria {
+    position: right;
+    width: 50vw;
+}
+
+.unities {
+    position: left;
+    width: 400px;
+    padding: 0 20px;
+    /*será somado 20px para cada lado do width*/
+    box-sizing: border-box;
+    /*recalcula para manter o valor do widht 
+    mesmo somado ao preenchimento*/
+}

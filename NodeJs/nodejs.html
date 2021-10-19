@@ -1,0 +1,20 @@
+node <!--manipular node-->
+-v <!--versão do programa-->
+npm init <!--iniciar npm [-y sempre sim]--> 
+npm install 'archive'<!--instalar programas para o npm 
+[-g arquivo global][i install abreviation][-D apenas em desenvolvimento]-->
+npm uninstall 'archive'<!--desinstalar-->
+node update <!--atualizar alterações no arquivo json-->
+npm run 'archive' <!--rodar script-->
+Tipos de aquivo 
+<!--
+    {x.y.z} {major.minor.patch} {versão que pode trazer problemas se alterada.versão que pode ser alterada.solução de bugs}
+    {^x.x.x} atualiza sempre os dois últimos valores
+    {~x.x.x} atualiza sempre o último valor
+    {x.x.x} nunca atualiza
+    {*} atualiza todos os valores
+-->
+npm i 'archive@x.x.x' <!--instalar versão específica do arquivo-->
+npm outdated <!--vizualizar atualizações-->
+npm upgrade <!--atualizar versões-->
+npm i 'archive@latest' <!--instalar última versão-->

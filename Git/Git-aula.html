@@ -1,39 +1,45 @@
 <h2>Git</h2>
-git config --global user.name 'nome' <!--cadastrar o nome do usuário no git--><br>
-git config --global user.email 'email' <!--cadastrar email do usuário no git--><br>
-git config --list <!--listar configurações git--><br>
+[command] [options] [arguments] <!--sequencia de comandos inline--><br>
 cat /etc/gitconfig <!--vizualizar configurações gerais--><br>
 cat ~/.gitconfig <!--vizualizar configurações git--><br>
-mkdir 'diretório' <!--criar diretório--><br>
+cat config <!--informações sobre o repositório--><br>
+cat 'archive'<!--vizualizar arquivo, mesmo que less-->
+mkdir 'diretório' <!--criar diretório, -p cria também parents 'dir/dir'--><br>
 cd 'diretório' <!--ir à 'diretório'  //  cd = change directory--><br>
 cd .. <!--retroceder endereço do diretório--><br>
-git init <!--criar página onde será armazenado todo o sitema git--><br>
-ls -a <!--arquivos dentro do diretório local--><br>
-ls <!--configurações simplificadas sobre o local--><br>
-cat config <!--informações sobre o repositório--><br>
-pwd <!--vizualizar endereço atual--><br>
-ls -al .git <!--listar todos os arquivos no documento pedido (.git)--><br>
-git log <!--vizualizar úlimo histórico--><br>
-git log --oneline <!--último histórico simplificado--><br>
-git log -n 'number' <!--vizualizar os últimos históricos na quantidade especificada--><br>
-git log --since=2020-10-01 <!--vizualizar históricos desde a data especificada--><br>
-git log --until=2020-10-01 <!--vizualizar históricos até a data especificada--><br>
-git log --author='author' <!--pesquisar por autor--><br>
-git log --grep='txt' <!--pesquisar por mensagem do commit--><br>
-vim 'file.txt' <!--editar arquivo--> [*ESC :wq] <!--finalizar edição--> <b>or</b> [*ESQ :q!] <!--sair sem editar--><br>
-touch 'file.txt' <!--criar arquivo--><br>
-git add . <!--atualizar todas as modificações na pasta gerenciada pelo git--><br>
-git add *.&lt;extensão&gt; <!--atualizar todas as atualizações dos arquivos com a extensão--><br>
-git add 'archive' <!--atualizar modificações do arquivo na pasta gerenciada pelo git--><br>
-git commit -m 'nome da atualização' <!--nomear o período do tempo desta atualização--><br>
-git commit -am 'nome da atualização' <!--função "-a" possibilita enviar arquivos já rastreados sem precisar adicionar--><br>
-git status <!--vizualizar o status dos arquivos--><br>
-git rm 'archive' <!--remover arquivo--><br>
-git rm --cached 'archive' <!--remover da stage area--><br>
-git diff <!--revela modificações entre working directory e stage area--><br>
-git diff --staged <!--revela modificações entre stage area e local repository--><br>
-git restore 'archive' <!--restaura última modificação do arquivo--><br>
-git restore --staged 'archive' <!--restaura modificação entre working diretory e stage area--><br>
+cd - <!--voltar ao diretório antes do Change Directory--><br>
+ls <!--listar no local--><br>
+ls -l <!--listar com mais informações--><br>
+ls -a /pasta/arquivo.txt<!--listar incluso ocultos no endereço indicado--><br>
+ls -h<!--listar abreviando o tamanho dos arquivos--><br>
+ls -R<!--lista arquivos dentro dos diretórios no local--><br>
+ls -S<!--listar em sequência por tamanho--><br>
+pwd<!--vizualizar endereço atual--><br>
+file 'archive'<!--informações sobre o arquivo--><br>
+stat 'archive'<!--informações individuais (dono, modificações e tamanho)--><br>
+vim 'file.txt'<!--editar arquivo--> [*ESC :wq] <!--finalizar edição--> <b>or</b> [*ESQ :q!] <!--sair sem editar--><br>
+nano 'arquive'<!--editar arquivo, mais simples que vim--><br>
+touch 'file.txt'<!--criar arquivo--><br>
+cp 'archive' 'directory'<!--copiar arquivos para, -r para copiar pastas--><br>
+mv 'old-name' 'new-name'<!--renomear, mover endereço do arquivo--><br>
+mv 'archive' 'directory/archive'<!--alterar, mover endereço do arquivo para diretório--><br>
+    <!--* pode ser usado para mais de um arquivo, ar* (todos que começam com 'ar')
+        ? pode ser usado para mais de um arquivo, archive? (archive1, archive2)-->
+find &lt;path&gt; arg -name "*.jpeg"<!--encontrar--><br>
+        <!--arg: type f (file), type d(directory)-->
+rm 'archive'<!--remover permanente, -r para diretórios, -f para forçar rm--><br>
+git add .<!--atualizar todas as modificações na pasta gerenciada pelo git--><br>
+git add *.&lt;extensão&gt;<!--atualizar todas as atualizações dos arquivos com a extensão--><br>
+git add 'archive'<!--atualizar modificações do arquivo na pasta gerenciada pelo git--><br>
+git commit -m 'nome da atualização'<!--nomear o período do tempo desta atualização--><br>
+git commit -am 'nome da atualização'<!--função "-a" possibilita enviar arquivos já rastreados sem precisar adicionar--><br>
+git status<!--vizualizar o status dos arquivos--><br>
+git rm 'archive'<!--remover arquivo--><br>
+git rm --cached 'archive'<!--remover da stage area--><br>
+git diff<!--revela modificações entre working directory e stage area--><br>
+git diff --staged<!--revela modificações entre stage area e local repository--><br>
+git restore 'archive'<!--restaura última modificação do arquivo--><br>
+git restore --staged 'archive'<!--restaura modificação entre working diretory e stage area--><br>
 git mv 'old-name' 'new-name' <!--renomear, mover endereço do arquivo--><br>
 git mv 'archive' 'directory/archive' <!--alterar, mover endereço do arquivo--><br>
 git reset HEAD 'archive' <!--resetar HEAD no último commit--><br>
@@ -47,15 +53,17 @@ git revert 'commit' <!--voltar até certo commit--><br>
 git show 'commit' <!--revela modificações no commit--><br>
 git show 'commit' -- src/'endereço' <!--mostra todas as modificações da pasta ou arquivo especificado--><br>
 git show 'commit' -- src/'endereço'/* <!--mostra todas alterações na pasta--><br>
-vim .gitignore <!--adicionar arquivos na pasta .gitignore--><br>
-ssh-keygen -t rsa -b 4096 -C 'viniviniciusclay07@gmail.com' <!--gerar chave SSH--><br>
-cd ~/.ssh/id_rsa.pub <!--pegar o código SSH gerado--><br>
-<a>
-https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-<!--link para criar e adicionar chave SSH no ssh-agent--><br>
-</a>
-eval `ssh-agent -s` <!--iniciar o ssh no backgroud--><br>
-ssh-add ~/.ssh/id_rsa <!--finalizar a adição do ssh na máquina--><br>
+git config --global user.name 'nome' <!--cadastrar o nome do usuário no git--><br>
+git config --global user.email 'email' <!--cadastrar email do usuário no git--><br>
+git config --list <!--listar configurações git--><br>
+git init <!--criar página onde será armazenado todo o sitema git--><br>
+git log <!--vizualizar úlimo histórico--><br>
+git log --oneline <!--último histórico simplificado--><br>
+git log -n 'number' <!--vizualizar os últimos históricos na quantidade especificada--><br>
+git log --since=2020-10-01 <!--vizualizar históricos desde a data especificada--><br>
+git log --until=2020-10-01 <!--vizualizar históricos até a data especificada--><br>
+git log --author='author' <!--pesquisar por autor--><br>
+git log --grep='txt' <!--pesquisar por mensagem do commit--><br>
 git remote add origin 'link' <!--adicionar repositório remoto--><br>
 git remote -v <!--verificar repositórios remotos--><br>
 git branch -M main <!--transformar Branch em Main--><br>
@@ -63,7 +71,18 @@ git push -u origin main <!--aprovar envio e compartilhamento de repositório; -u
 git push <!--envio do repositório já aprovado--><br>
 git pull <!--trazer para a máquina o update online quando já aprovado--><br>
 git clone 'SSH' <!--copiar arquivo de repositório remoto no GitHub de qualquer usuário--><br>
+vim .gitignore <!--adicionar arquivos na pasta .gitignore--><br>
+ssh-keygen -t rsa -b 4096 -C 'viniviniciusclay07@gmail.com' <!--gerar chave SSH--><br>
+cd ~/.ssh/id_rsa.pub <!--pegar o código SSH gerado--><br>
+eval `ssh-agent -s` <!--iniciar o ssh no backgroud--><br>
+ssh-add ~/.ssh/id_rsa <!--finalizar a adição do ssh na máquina--><br>
+<a>
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+<!--link para criar e adicionar chave SSH no ssh-agent--><br>
+</a>
 
+<!--https://maratonadiscover.rocketseat.com.br/maratona/aula-01-->
+<!--https://app.rocketseat.com.br/node/maratona-discover-edicao-01/lesson/aula-01-->
 
 <br><table>
     <tr>
